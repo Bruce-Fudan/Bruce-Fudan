@@ -209,6 +209,13 @@
       color: var(--muted);
     }
 
+    code {
+      font-size: .92em;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(128, 128, 128, .1);
+    }
+
     footer {
       margin-top: 56px;
       padding-top: 24px;
@@ -261,7 +268,7 @@
       <h2>Interests</h2>
       <ul class="interests">
         <li><span class="k">Hobbies</span> marathon running, cycling, and photography</li>
-        <li><span class="k">Reading</span> sci-fi, poetry, philosophy, economics</li>
+        <li><span class="k">Reading</span> sci-fi, poetry, philosophy</li>
         <li><span class="k">Research</span> astrophysics, condensed matter physics, and particle physics</li>
       </ul>
     </section>
@@ -269,18 +276,21 @@
     <section>
       <h2>Coursework</h2>
       <ul class="interests">
-        <li><span class="k">2026.09–2027.03</span><span class="v">Mechanics, Linear Algebra, Calculus, College English,<br>Introduction to Artificial Intelligence, Computer Applications</span></li>
+        <li><span class="k">2026.09–2027.03</span><span class="v">Mechanics, Linear Algebra, Calculus, College
+            English,<br>Introduction to Artificial Intelligence, Computer Applications</span></li>
       </ul>
     </section>
 
     <section>
       <h2>Skills</h2>
       <ul class="interests">
-        <li><span class="k">Programming</span><span class="v">C (comfortable with syntax)<br>Python (learning: NumPy, SciPy, SymPy, PyTorch)</span></li>
-        <li><span class="k">Algorithms</span><span class="v">Studied sorting, searching, dynamic programming,<br>and basic data structures</span></li>
-        <li><span class="k">AI &amp; Tools</span><span class="v">Local LLM deployment with GPU/NPU acceleration<br>DeepSeek Harness as primary agent environment</span></li>
-        <li><span class="k">Systems</span><span class="v">Linux (Ubuntu) as primary OS</span></li>
-        <li><span class="k">Languages</span><span class="v">Chinese (native)<br>English (conversational, NCEE 140+/150)</span></li>
+        <li><span class="k">Programming</span><span class="v">C (comfortable with syntax)<br>Python (learning: NumPy,
+            SciPy, SymPy, PyTorch)</span></li>
+        <li><span class="k">AI &amp; Tools</span><span class="v">Local LLM deployment with GPU/NPU
+            acceleration<br>DeepSeek Harness as primary agent environment</span></li>
+        <li><span class="k">Systems</span><span class="v">Ubuntu as primary OS</span></li>
+        <li><span class="k">Languages</span><span class="v">Chinese (native)<br>English (conversational, NCEE
+            140+/150)</span></li>
       </ul>
     </section>
 
@@ -323,6 +333,33 @@
       </div>
     </section>
 
+
+    <section>
+      <h2>Open Source Contributions</h2>
+      <ul class="interests">
+        <li>
+          <span class="k">KALI_IOS_ANON</span>
+          <span class="v">
+            Reported a shell parsing bug in the auto-install script: unescaped
+            <code>\n</code> and trailing spaces in the tool registry caused
+            <code>git clone</code> to fail for Gobuster with an illegal URL.
+            <a href="https://github.com/SannyGrooves/KALI_IOS_ANON/issues/1" target="_blank" rel="noopener">Issue #1
+              →</a>
+          </span>
+        </li>
+        <li>
+          <span class="k">DanXi</span>
+          <span class="v">
+            Reported a credential injection flaw in the WebView auto-login path:
+            unescaped interpolation of passwords containing backticks or
+            <code>${…}</code> broke login and risked script execution in the
+            Fudan auth page context.
+            <a href="https://github.com/DanXi-Dev/DanXi/issues/716" target="_blank" rel="noopener">Issue #716 →</a>
+          </span>
+        </li>
+      </ul>
+    </section>
+
     <footer>
       <p>© <span id="year"></span> Bruce. All rights reserved.</p>
       <p>This site logs anonymous visitor info for basic analytics.</p>
@@ -334,7 +371,9 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e5bedabf74a24acbb6305fdcfc483bcf"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "e5bedabf74a24acbb6305fdcfc483bcf"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
