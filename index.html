@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +13,36 @@
       --muted: #8a8a8e;
       --border: rgba(0, 0, 0, .07);
       --radius: 16px;
+
+      /* --- 浅色模式主题色 --- */
+      --c-edu: #3b82f6;     /* 蓝 */
+      --c-osc: #0ea5e9;     /* 青 */
+      --c-proj: #16a34a;    /* 绿 */
+      --c-skills: #ca8a04;  /* 黄（使用暗金色保证可读性） */
+      --c-course: #ea580c;  /* 橘 */
+      --c-honors: #dc2626;  /* 红 */
+      --c-act: #db2777;     /* 粉 */
+      --c-int: #9333ea;     /* 紫 */
+
+      /* --- 浅色模式极淡渐变背景 --- */
+      --grad-edu: linear-gradient(180deg, rgba(59, 130, 246, 0.06) 0%, var(--card) 60%);
+      --grad-osc: linear-gradient(180deg, rgba(14, 165, 233, 0.06) 0%, var(--card) 60%);
+      --grad-proj: linear-gradient(180deg, rgba(22, 163, 74, 0.06) 0%, var(--card) 60%);
+      --grad-skills: linear-gradient(180deg, rgba(202, 138, 4, 0.06) 0%, var(--card) 60%);
+      --grad-course: linear-gradient(180deg, rgba(234, 88, 12, 0.06) 0%, var(--card) 60%);
+      --grad-honors: linear-gradient(180deg, rgba(220, 38, 38, 0.06) 0%, var(--card) 60%);
+      --grad-act: linear-gradient(180deg, rgba(219, 39, 119, 0.06) 0%, var(--card) 60%);
+      --grad-int: linear-gradient(180deg, rgba(147, 51, 234, 0.06) 0%, var(--card) 60%);
+
+      /* --- 浅色模式 code 标签背景 --- */
+      --bg-code-edu: rgba(59, 130, 246, 0.1);
+      --bg-code-osc: rgba(14, 165, 233, 0.1);
+      --bg-code-proj: rgba(22, 163, 74, 0.1);
+      --bg-code-skills: rgba(202, 138, 4, 0.1);
+      --bg-code-course: rgba(234, 88, 12, 0.1);
+      --bg-code-honors: rgba(220, 38, 38, 0.1);
+      --bg-code-act: rgba(219, 39, 119, 0.1);
+      --bg-code-int: rgba(147, 51, 234, 0.1);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -23,16 +52,41 @@
         --text: #f2f2f4;
         --muted: #8e8e93;
         --border: rgba(255, 255, 255, .08);
+
+        /* --- 深色模式主题色（提亮+降饱和） --- */
+        --c-edu: #60a5fa;
+        --c-osc: #22d3ee;
+        --c-proj: #4ade80;
+        --c-skills: #facc15;
+        --c-course: #fb923c;
+        --c-honors: #f87171;
+        --c-act: #f472b6;
+        --c-int: #c084fc;
+
+        /* --- 深色模式极淡渐变背景 --- */
+        --grad-edu: linear-gradient(180deg, rgba(96, 165, 250, 0.08) 0%, var(--card) 60%);
+        --grad-osc: linear-gradient(180deg, rgba(34, 211, 238, 0.08) 0%, var(--card) 60%);
+        --grad-proj: linear-gradient(180deg, rgba(74, 222, 128, 0.08) 0%, var(--card) 60%);
+        --grad-skills: linear-gradient(180deg, rgba(250, 204, 21, 0.08) 0%, var(--card) 60%);
+        --grad-course: linear-gradient(180deg, rgba(251, 146, 60, 0.08) 0%, var(--card) 60%);
+        --grad-honors: linear-gradient(180deg, rgba(248, 113, 113, 0.08) 0%, var(--card) 60%);
+        --grad-act: linear-gradient(180deg, rgba(244, 114, 182, 0.08) 0%, var(--card) 60%);
+        --grad-int: linear-gradient(180deg, rgba(192, 132, 252, 0.08) 0%, var(--card) 60%);
+
+        /* --- 深色模式 code 标签背景 --- */
+        --bg-code-edu: rgba(96, 165, 250, 0.15);
+        --bg-code-osc: rgba(34, 211, 238, 0.15);
+        --bg-code-proj: rgba(74, 222, 128, 0.15);
+        --bg-code-skills: rgba(250, 204, 21, 0.15);
+        --bg-code-course: rgba(251, 146, 60, 0.15);
+        --bg-code-honors: rgba(248, 113, 113, 0.15);
+        --bg-code-act: rgba(244, 114, 182, 0.15);
+        --bg-code-int: rgba(192, 132, 252, 0.15);
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      -webkit-text-size-adjust: 100%;
-    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -90,10 +144,7 @@
       color: var(--muted);
     }
 
-    .profile-text .email {
-      margin: 0;
-      font-size: 14.5px;
-    }
+    .profile-text .email { margin: 0; font-size: 14.5px; }
 
     .profile-text .email a {
       color: var(--muted);
@@ -107,14 +158,10 @@
       border-bottom-color: var(--muted);
     }
 
-    section {
-      margin-bottom: 36px;
-    }
+    section { margin-bottom: 36px; }
+    section:last-of-type { margin-bottom: 0; }
 
-    section:last-of-type {
-      margin-bottom: 0;
-    }
-
+    /* 让 h2 的颜色跟随各板块 */
     h2 {
       margin: 0 0 14px;
       font-size: 12px;
@@ -122,99 +169,181 @@
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--muted);
+      transition: color .3s ease;
     }
 
-    .interests {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .interests li {
-      display: flex;
-      align-items: baseline;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .interests .k {
-      display: inline-block;
-      flex: 0 0 auto;
-      min-width: 130px;
-      color: var(--muted);
-      font-size: 13.5px;
-    }
-
-    .interests .v {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    @media (max-width: 480px) {
-      .interests li {
-        display: block;
-      }
-
-      .interests .k {
-        display: block;
-        min-width: 0;
-        margin-bottom: 1px;
-      }
-
-      .interests .v {
-        display: block;
-      }
-    }
-
-    .projects {
+    /* ================= 网格独立卡片 ================= */
+    .cards {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     @media (min-width: 520px) {
-      .projects {
-        grid-template-columns: 1fr 1fr;
-      }
+      .cards.two-col { grid-template-columns: 1fr 1fr; }
     }
 
-    .project {
-      display: block;
-      padding: 18px 20px;
+    .cards > li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 14px 18px;
       background: var(--card);
       border: 1px solid var(--border);
+      border-top-width: 2px; /* 顶部彩边预留 */
       border-radius: var(--radius);
+    }
+
+    .card .k {
+      display: block;
+      font-size: 12.5px;
+      color: var(--muted);
+      letter-spacing: .01em;
+      margin-bottom: 2px;
+    }
+
+    .card .v {
+      display: block;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    a.card {
       text-decoration: none;
       color: inherit;
-      transition: border-color .2s ease;
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
 
-    .project:hover {
-      border-color: var(--muted);
+    a.card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .04);
     }
 
-    .project .name {
+    a.card .name {
       display: block;
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 600;
       letter-spacing: -.01em;
       margin-bottom: 3px;
     }
 
-    .project .hint {
+    a.card .hint {
       display: block;
       font-size: 13.5px;
       color: var(--muted);
+      line-height: 1.5;
     }
 
+    /* ================= 大卡片列表组 ================= */
+    .card-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top-width: 2px; /* 顶部彩边预留 */
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .card-list > li {
+      display: flex;
+      align-items: baseline;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-list > li:last-child { border-bottom: none; }
+
+    .card-list .k {
+      flex: 0 0 130px;
+      font-size: 12.5px;
+      color: var(--muted);
+      letter-spacing: .01em;
+    }
+
+    .card-list .v {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 480px) {
+      .card-list > li { display: block; }
+      .card-list .k {
+        display: block;
+        flex: none;
+        margin-bottom: 2px;
+      }
+    }
+
+    /* --- code 标签通用基础 --- */
     code {
       font-size: .92em;
       padding: 1px 5px;
       border-radius: 4px;
       background: rgba(128, 128, 128, .1);
     }
+
+    /* =========================================
+       各版块色彩个性化注入 (Magic Section)
+       ========================================= */
+       
+    /* 1. Education (蓝) */
+    .sec-edu h2 { color: var(--c-edu); }
+    .sec-edu .card, .sec-edu .card-list { border-top-color: var(--c-edu); background: var(--grad-edu); }
+    .sec-edu a.card:hover { border-color: var(--c-edu); }
+    .sec-edu code { background: var(--bg-code-edu); color: var(--c-edu); }
+
+    /* 2. Open Source Contributions (青) */
+    .sec-osc h2 { color: var(--c-osc); }
+    .sec-osc .card, .sec-osc .card-list { border-top-color: var(--c-osc); background: var(--grad-osc); }
+    .sec-osc a.card:hover { border-color: var(--c-osc); }
+    .sec-osc code { background: var(--bg-code-osc); color: var(--c-osc); }
+
+    /* 3. Projects (绿) */
+    .sec-proj h2 { color: var(--c-proj); }
+    .sec-proj .card, .sec-proj .card-list { border-top-color: var(--c-proj); background: var(--grad-proj); }
+    .sec-proj a.card:hover { border-color: var(--c-proj); }
+    .sec-proj code { background: var(--bg-code-proj); color: var(--c-proj); }
+
+    /* 4. Skills (黄) */
+    .sec-skills h2 { color: var(--c-skills); }
+    .sec-skills .card, .sec-skills .card-list { border-top-color: var(--c-skills); background: var(--grad-skills); }
+    .sec-skills a.card:hover { border-color: var(--c-skills); }
+    .sec-skills code { background: var(--bg-code-skills); color: var(--c-skills); }
+
+    /* 5. Coursework (橘) */
+    .sec-course h2 { color: var(--c-course); }
+    .sec-course .card, .sec-course .card-list { border-top-color: var(--c-course); background: var(--grad-course); }
+    .sec-course a.card:hover { border-color: var(--c-course); }
+    .sec-course code { background: var(--bg-code-course); color: var(--c-course); }
+
+    /* 6. Honors (红) */
+    .sec-honors h2 { color: var(--c-honors); }
+    .sec-honors .card, .sec-honors .card-list { border-top-color: var(--c-honors); background: var(--grad-honors); }
+    .sec-honors a.card:hover { border-color: var(--c-honors); }
+    .sec-honors code { background: var(--bg-code-honors); color: var(--c-honors); }
+
+    /* 7. Activities (粉) */
+    .sec-act h2 { color: var(--c-act); }
+    .sec-act .card, .sec-act .card-list { border-top-color: var(--c-act); background: var(--grad-act); }
+    .sec-act a.card:hover { border-color: var(--c-act); }
+    .sec-act code { background: var(--bg-code-act); color: var(--c-act); }
+
+    /* 8. Interests (紫) */
+    .sec-int h2 { color: var(--c-int); }
+    .sec-int .card, .sec-int .card-list { border-top-color: var(--c-int); background: var(--grad-int); }
+    .sec-int a.card:hover { border-color: var(--c-int); }
+    .sec-int code { background: var(--bg-code-int); color: var(--c-int); }
+
 
     footer {
       margin-top: 56px;
@@ -224,9 +353,7 @@
       color: var(--muted);
     }
 
-    footer p {
-      margin: 0;
-    }
+    footer p { margin: 0; }
 
     footer a {
       color: var(--muted);
@@ -234,12 +361,9 @@
       text-underline-offset: 2px;
     }
 
-    footer a:hover {
-      color: var(--text);
-    }
+    footer a:hover { color: var(--text); }
   </style>
 </head>
-
 <body>
   <div class="wrap">
 
@@ -256,106 +380,155 @@
       </div>
     </header>
 
-    <section>
+    <!-- Education -->
+    <section class="sec-edu">
       <h2>Education</h2>
-      <ul class="interests">
-        <li><span class="k">2026–2030</span> Dual B.S. in Physics and Artificial Intelligence</li>
-        <li><span class="k">Planned</span> Ph.D. in Physics</li>
+      <ul class="cards">
+        <li class="card">
+          <span class="k">2026–2030</span>
+          <span class="v">Dual B.S. in Physics and Artificial Intelligence</span>
+        </li>
+        <li class="card">
+          <span class="k">Planned</span>
+          <span class="v">Ph.D. in Physics</span>
+        </li>
       </ul>
     </section>
 
-    <section>
-      <h2>Interests</h2>
-      <ul class="interests">
-        <li><span class="k">Hobbies</span> marathon running, cycling, and photography</li>
-        <li><span class="k">Reading</span> sci-fi, poetry, philosophy</li>
-        <li><span class="k">Research</span> astrophysics, condensed matter physics, and particle physics</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Coursework</h2>
-      <ul class="interests">
-        <li><span class="k">2026.09–2027.03</span><span class="v">Mechanics, Linear Algebra, Calculus, College
-            English,<br>Introduction to Artificial Intelligence, Computer Applications</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul class="interests">
-        <li><span class="k">Programming</span><span class="v">C (comfortable with syntax)<br>Python (learning: NumPy,
-            SciPy, SymPy, PyTorch)</span></li>
-        <li><span class="k">AI &amp; Tools</span><span class="v">Local LLM deployment with GPU/NPU
-            acceleration<br>DeepSeek Harness as primary agent environment</span></li>
-        <li><span class="k">Systems</span><span class="v">Ubuntu as primary OS</span></li>
-        <li><span class="k">Languages</span><span class="v">Chinese (native)<br>English (conversational, NCEE
-            140+/150)</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Honors</h2>
-      <ul class="interests">
-        <li>Second Prize, Chinese Physics Olympiad (Provincial Division)</li>
-        <li>Mass Level 2 Runner (Half Marathon), Chinese Athletics Association</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Activities</h2>
-      <ul class="interests">
-        <li>Photography Team Member, Integrated Media Center, Fudan University Students' Union</li>
-        <li>Humanist Photography Group Member, Fudan University Photography Association</li>
-        <li>Sports Department Member, Physics Department Student Union, Fudan University</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="projects">
-        <a class="project" href="https://bruce-fudan.github.io/gallery/">
-          <span class="name">My Gallery</span>
-          <span class="hint">Selected photographs</span>
-        </a>
-        <a class="project" href="https://github.com/Bruce-Fudan/linear-algebra">
-          <span class="name">Linear Algebra Notes</span>
-          <span class="hint">Reorganized course notes focusing on geometric intuition</span>
-        </a>
-        <a class="project" href="https://github.com/Bruce-Fudan/encryption_tool">
-          <span class="name">Encryption Tool</span>
-          <span class="hint">Offline AES-256-GCM file &amp; text encryption</span>
-        </a>
-        <a class="project" href="https://bruce-fudan.github.io/bobing/">
-          <span class="name">Bobing</span>
-          <span class="hint">A traditional Mid-Autumn dice game</span>
-        </a>
-      </div>
-    </section>
-
-
-    <section>
+    <!-- Open Source Contributions -->
+    <section class="sec-osc">
       <h2>Open Source Contributions</h2>
-      <ul class="interests">
+      <ul class="cards">
         <li>
-          <span class="k">KALI_IOS_ANON</span>
-          <span class="v">
-            Reported a shell parsing bug in the auto-install script: unescaped
-            <code>\n</code> and trailing spaces in the tool registry caused
-            <code>git clone</code> to fail for Gobuster with an illegal URL.
-            <a href="https://github.com/SannyGrooves/KALI_IOS_ANON/issues/1" target="_blank" rel="noopener">Issue #1
-              →</a>
-          </span>
+          <a class="card" href="https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/2563" target="_blank" rel="noopener">
+            <span class="name">LM Studio · Issue #2563</span>
+            <span class="hint">LM Link shows "Online" but 0 connected devices; <code>lmlink-connector</code> starts but never initializes <code>tsnet</code> (zero sockets, no state files), despite reachable network dependencies.</span>
+          </a>
         </li>
         <li>
-          <span class="k">DanXi</span>
-          <span class="v">
-            Reported a credential injection flaw in the WebView auto-login path:
-            unescaped interpolation of passwords containing backticks or
-            <code>${…}</code> broke login and risked script execution in the
-            Fudan auth page context.
-            <a href="https://github.com/DanXi-Dev/DanXi/issues/716" target="_blank" rel="noopener">Issue #716 →</a>
-          </span>
+          <a class="card" href="https://github.com/DanXi-Dev/DanXi/issues/716" target="_blank" rel="noopener">
+            <span class="name">DanXi · Issue #716</span>
+            <span class="hint">Credential injection in WebView auto-login: unescaped interpolation of passwords containing backticks or <code>${…}</code> broke login and risked script execution in the Fudan auth page context.</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="https://github.com/SannyGrooves/KALI_IOS_ANON/issues/1" target="_blank" rel="noopener">
+            <span class="name">KALI_IOS_ANON · Issue #1</span>
+            <span class="hint">Shell parsing bug in auto-install script: unescaped <code>\n</code> and trailing spaces in the tool registry caused <code>git clone</code> to fail for Gobuster with an illegal URL.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section class="sec-proj">
+      <h2>Projects</h2>
+      <ul class="cards two-col">
+        <li>
+          <a class="card" href="https://bruce-fudan.github.io/gallery/">
+            <span class="name">My Gallery</span>
+            <span class="hint">Selected photographs</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="https://github.com/Bruce-Fudan/linear-algebra">
+            <span class="name">Linear Algebra Notes</span>
+            <span class="hint">Reorganized course notes focusing on geometric intuition</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="https://github.com/Bruce-Fudan/encryption_tool">
+            <span class="name">Encryption Tool</span>
+            <span class="hint">Offline AES-256-GCM file &amp; text encryption</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="https://bruce-fudan.github.io/bobing/">
+            <span class="name">Bobing</span>
+            <span class="hint">A traditional Mid-Autumn dice game</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="sec-skills">
+      <h2>Skills</h2>
+      <ul class="card-list">
+        <li>
+          <span class="k">Programming</span>
+          <span class="v">C (comfortable with syntax)<br>Python (learning: NumPy, SciPy, SymPy, PyTorch)</span>
+        </li>
+        <li>
+          <span class="k">AI</span>
+          <span class="v">Local LLM deployment with GPU/NPU acceleration<br>DeepSeek Harness as primary agent environment</span>
+        </li>
+        <li>
+          <span class="k">Systems</span>
+          <span class="v">Linux (Ubuntu) as primary OS</span>
+        </li>
+        <li>
+          <span class="k">Languages</span>
+          <span class="v">Chinese (native)<br>English (conversational, NCEE 140+/150)</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Coursework -->
+    <section class="sec-course">
+      <h2>Coursework</h2>
+      <ul class="card-list">
+        <li>
+          <span class="k">2026.09–2027.03</span>
+          <span class="v">Mechanics, Linear Algebra, Calculus, College English,<br>Introduction to Artificial Intelligence, Computer Applications</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Honors -->
+    <section class="sec-honors">
+      <h2>Honors</h2>
+      <ul class="card-list">
+        <li>
+          <span class="v">Second Prize, Chinese Physics Olympiad (Provincial Division)</span>
+        </li>
+        <li>
+          <span class="v">Mass Level 2 Runner (Half Marathon), Chinese Athletics Association</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Activities -->
+    <section class="sec-act">
+      <h2>Activities</h2>
+      <ul class="card-list">
+        <li>
+          <span class="v">Photography Team Member, Integrated Media Center, Fudan University Students' Union</span>
+        </li>
+        <li>
+          <span class="v">Humanist Photography Group Member, Fudan University Photography Association</span>
+        </li>
+        <li>
+          <span class="v">Sports Department Member, Physics Department Student Union, Fudan University</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Interests -->
+    <section class="sec-int">
+      <h2>Interests</h2>
+      <ul class="card-list">
+        <li>
+          <span class="k">Hobbies</span>
+          <span class="v">marathon running, cycling, and photography</span>
+        </li>
+        <li>
+          <span class="k">Reading</span>
+          <span class="v">sci-fi, poetry, philosophy</span>
+        </li>
+        <li>
+          <span class="k">Research</span>
+          <span class="v">astrophysics, condensed matter physics, and particle physics</span>
         </li>
       </ul>
     </section>
@@ -373,7 +546,6 @@
 
   <!-- Cloudflare Web Analytics -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
-    data-cf-beacon='{"token": "e5bedabf74a24acbb6305fdcfc483bcf"}'></script><!-- End Cloudflare Web Analytics -->
+    data-cf-beacon='{"token": "e5bedabf74a24acbb6305fdcfc483bcf"}'></script>
 </body>
-
 </html>
